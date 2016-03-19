@@ -1,0 +1,13 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /stylesheets
+	static_dir: stylesheets
+	static_dir: htmlfiles
+	static_dir: javascripts
+
+- url: /.*
+  script: maptest.app
+

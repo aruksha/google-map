@@ -4,12 +4,13 @@ var placeId;
 var geocoder;
 var mapfilter_typ;
 var mapfilter_typ_check;
-function initMap() {
+
+function initMap() 
+{
    //alert("going");//new
-   mapfilter_typ = document.getElementById("hdfMapsearchtyp").value;
-    /* initialize google map */
+   //mapfilter_typ = document.getElementById("hdfMapsearchtyp").value;
     map = new google.maps.Map(document.getElementById('showMap'), {
-        zoom: 10
+        zoom: 12
     });
     infowindow = new google.maps.InfoWindow();
     geocoder = new google.maps.Geocoder();
@@ -23,7 +24,9 @@ function initMap() {
     var input = document.getElementById('txtSearchLocation');
     var searchBox = new google.maps.places.SearchBox(input);
 }
-function geocodeAddress(geocoder, resultsMap) {
+
+function geocodeAddress(geocoder, resultsMap) 
+{
     var address = document.getElementById('hdfloc').value; //"Shri Kunj, Jayadev Vihar, Bhubaneshwar, Odisha";
     geocoder.geocode({ 'address': address }, function (results, status) {
         //if (mapfilter_typ == '')
@@ -40,7 +43,9 @@ function geocodeAddress(geocoder, resultsMap) {
         }
     });
 }
-function searchNearbyRest(location) {
+
+function searchNearbyRest(location) 
+{
     mapfilter_typ_check = "restaurant";
     var service = new google.maps.places.PlacesService(map);
     /* search for nearby restaurants */
@@ -52,8 +57,10 @@ function searchNearbyRest(location) {
         opennow: true
     }, createMarkersRest);
 }
+
 /* if nearby restaus found, create markers for them */
-function createMarkersRest(results, status) {
+function createMarkersRest(results, status) 
+{
     if (status === google.maps.places.PlacesServiceStatus.OK) { /* this status and results are returned by PlacesService call */
         for (var i = 0; i < results.length; i++) {
             createMarkerRest(results[i]);
@@ -62,8 +69,10 @@ function createMarkersRest(results, status) {
         }
     }
 }
+
 /* this function creates markers */
-function createMarkerRest(place) {
+function createMarkerRest(place) 
+{
     service = new google.maps.places.PlacesService(map);
     service.getDetails({
         placeId: place.place_id
@@ -104,7 +113,9 @@ function createMarkerRest(place) {
         }
     });
 }
-function geocodePlaceIdRest(place) {
+
+function geocodePlaceIdRest(place) 
+{
     service = new google.maps.places.PlacesService(map);
     service.getDetails({
         placeId: place.place_id
@@ -142,7 +153,9 @@ function geocodePlaceIdRest(place) {
         alert("rest-" + document.getElementById('hdfMaprestPlaceid').value);
     });
 }
-function searchNearbyGroc(location) {
+
+function searchNearbyGroc(location) 
+{
     var service = new google.maps.places.PlacesService(map);
     /* search for nearby restaurants */
     service.nearbySearch({
@@ -153,7 +166,9 @@ function searchNearbyGroc(location) {
         opennow: true
     }, createMarkersGroc);
 }
-function createMarkersGroc(results, status) {
+
+function createMarkersGroc(results, status) 
+{
     if (status === google.maps.places.PlacesServiceStatus.OK) { /* this status and results are returned by PlacesService call */
         for (var i = 0; i < results.length; i++) {
             createMarkerGroc(results[i]);
@@ -162,7 +177,9 @@ function createMarkersGroc(results, status) {
         }
     }
 }
-function createMarkerGroc(place) {
+
+function createMarkerGroc(place) 
+{
     service = new google.maps.places.PlacesService(map);
     service.getDetails({
         placeId: place.place_id
@@ -185,8 +202,9 @@ function createMarkerGroc(place) {
         //}
     });
 }
-function geocodePlaceIdGroc(place) {
 
+function geocodePlaceIdGroc(place) 
+{
     service = new google.maps.places.PlacesService(map);
     service.getDetails({
         placeId: place.place_id
@@ -224,7 +242,9 @@ function geocodePlaceIdGroc(place) {
         alert("groc"+document.getElementById('hdfMapgrocPlaceid').value);
     });
 }
-function createMarkerFromLocation(location) {
+
+function createMarkerFromLocation(location) 
+{
     var marker = new google.maps.Marker({
         map: map,
         //animation: google.maps.Animation.BOUNCE,

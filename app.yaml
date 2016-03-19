@@ -8,6 +8,9 @@ handlers:
 
 - url: /htmlfiles
   static_dir: htmlfiles
+ 
+- url: /javascripts
+  static_dir: javascripts
 
 - url: /.*
   script: googlemap.app

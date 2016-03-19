@@ -4,10 +4,16 @@ threadsafe: true
 
 handlers:
 - url: /stylesheets
-	static_dir: stylesheets
-	static_dir: htmlfiles
-	static_dir: javascripts
+  static_dir: stylesheets
+
+- url: /htmlfiles
+  static_dir: htmlfiles
 
 - url: /.*
-  script: maptest.app
+  script: googlemap.app
 
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

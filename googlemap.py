@@ -12,6 +12,8 @@ class MainPage(webapp2.RequestHandler):
 
 		path = 'index.html' 
 		self.response.out.write(template.render(path, template_values))
+		#path = 'htmlfiles/map.html' 
+		#self.response.out.write(template.render(path, template_values))
 
 app = webapp2.WSGIApplication([
 	('/', MainPage),

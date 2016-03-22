@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Autocomplete practice</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<link type="text/css" rel="stylesheet" href="/stylesheets/autocompelte.css" />
+	</head>
+	<body>
+		<input id="pac-input" class="controls" type="text"
+		placeholder="Enter a location">
+		<div id="type-selector" class="controls">
+			<input type="radio" name="type" id="changetype-all" checked="checked">
+			<label for="changetype-all">All</label>
+
+			<input type="radio" name="type" id="changetype-establishment">
+			<label for="changetype-establishment">Establishments</label>
+
+			<input type="radio" name="type" id="changetype-address">
+			<label for="changetype-address">Addresses</label>
+
+			<input type="radio" name="type" id="changetype-geocode">
+			<label for="changetype-geocode">Geocodes</label>
+		</div>
+		<div id="map"></div>
+
+		<script src="/javascripts/autocomplete.js"> </script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDwtIbuHYbU02kTPiqxMVs3yzHfxMGrls&libraries=places&callback=initMap"
+		async defer></script>
+	</body>
+</html>

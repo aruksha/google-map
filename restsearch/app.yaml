@@ -1,0 +1,22 @@
+runtime: python27
+api_version: 1
+threadsafe: true
+
+handlers:
+- url: /stylesheets
+  static_dir: stylesheets
+
+- url: /htmlfiles
+  static_dir: htmlfiles
+ 
+- url: /javascripts
+  static_dir: javascripts
+
+- url: /.*
+  script: googlemap.app
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

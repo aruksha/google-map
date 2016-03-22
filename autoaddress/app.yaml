@@ -6,17 +6,12 @@ handlers:
 - url: /css
   static_dir: css
 
-- url: /htmlfiles
-  static_dir: htmlfiles
- 
-- url: /scripts
-  static_dir: scripts
+- url: /js
+  static_dir: js
 
 - url: /.*
-  script: restsearch.app
+  script: autoaddress.app
 
 libraries:
 - name: webapp2
-  version: latest
-- name: jinja2
   version: latest

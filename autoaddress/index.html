@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Autocomplete practice</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+		<meta charset="utf-8">
+		<link type="text/css" rel="stylesheet" href="/css/main.css" />
+	</head>
+	<body>
+		Test autoaddress: 
+		<!-- 
+		Create input for the map with id 'autoaddress'
+		-->
+		<input id="autoaddress" type="text" placeholder="address" size="50">
+
+		<!-- 
+		Calling javascripts 
+		-->
+		<script src="/js/autoaddress.js"> </script>
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCDwtIbuHYbU02kTPiqxMVs3yzHfxMGrls&libraries=places&callback=initialize"
+		async defer></script>
+
+		<!-- 
+		Create placeholder for the map with id 'map'
+		-->
+    <div id="map"></div>
+	</body>
+</html>

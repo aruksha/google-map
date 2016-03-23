@@ -3,14 +3,14 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /stylesheets
-  static_dir: stylesheets
+- url: /css
+  static_dir: css
 
 - url: /htmlfiles
   static_dir: htmlfiles
  
-- url: /javascripts
-  static_dir: javascripts
+- url: /js
+  static_dir: js
 
 - url: /.*
   script: autocomplete.app
